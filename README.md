@@ -48,3 +48,96 @@ struct meta {
   9: optional map<string, test_map_value> test_struct_map
 }
 ```
+Demo of json_thrift_convertor
+src_json:
+``` c++
+{
+    "test_simple_map": {
+        "a": 1,
+        "b": 2
+    },
+    "name": "abc",
+    "add_more": {
+        "more": "more"
+    },
+    "error_type": "SUCCESS",
+    "in_list": [
+        {
+            "l_name": "l_name1"
+        },
+        {
+            "l_name": "l_name2"
+        },
+        {
+            "l_name": "l_name3"
+        }
+    ],
+    "test_struct_map": {
+        "a": {
+            "value": "abc"
+        },
+        "b": {
+            "value": "abc1"
+        }
+    },
+    "num": 128,
+    "simple_list": [
+        1,
+        2,
+        3,
+        4
+    ],
+    "desc": "for_lyj_test"
+}
+```
+dest_struct:
+``` c++
+meta(test_simple_map={u'a': 1, u'b': 2}, name=u'abc', add_more=in_meta(in_list=None, more=u'more'), error_type=1, in_list=[list_test(l_name=u'l_name1'), list_test(l_name=u'l_name2'), list_test(l_name=u'l_name3')], test_struct_map={u'a': test_map_value(value=u'abc'), u'b': test_map_value(value=u'abc1')}, num=128, simple_list=[1, 2, 3, 4], desc=u'for_lyj_test')
+```
+
+Demo of thrift_json_convertor 
+stc_struct is dest_struct below
+dest json dict is:
+``` c++
+{
+    "test_simple_map": {
+        "a": 1,
+        "b": 2
+    },
+    "name": "abc",
+    "add_more": {
+        "more": "more"
+    },
+    "error_type": "SUCCESS",
+    "in_list": [
+        {
+            "l_name": "l_name1"
+        },
+        {
+            "l_name": "l_name2"
+        },
+        {
+            "l_name": "l_name3"
+        },
+        {
+            "l_name": "l_name4"
+        }
+    ],
+    "test_struct_map": {
+        "a": {
+            "value": "abc"
+        },
+        "b": {
+            "value": "abc1"
+        }
+    },
+    "num": 128,
+    "simple_list": [
+        1,
+        2,
+        3,
+        4
+    ],
+    "desc": "for_lyj_test"
+}
+```
