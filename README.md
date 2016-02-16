@@ -1,6 +1,6 @@
 # thrift_json_convertor
 First of all, thriftpy is a brillent lib for pythonic thrift client\server!
-In my project, there`s a requirement is convert json with thrif struct, while thriftpy or stantdard thrif python lib only include thrift json proto.
+In my project, a requirement is convert json with thrift struct, while thriftpy or stantdard thrif python lib only include thrift json proto.
 So here I write a convertor for standard json to thrift struct convert and also convert back for thriftpy.
 
 ## standard json -> thrift struct
